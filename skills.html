@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Professional Skills | Muhsina Juhi</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <style>
+      @keyframes gradient-animation {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+      .animated-gradient {
+        background: linear-gradient(-45deg, #1a1a2e, #16213e, #0f3460, #533483);
+        background-size: 400% 400%;
+        animation: gradient-animation 15s ease infinite;
+      }
+      .reveal {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+      }
+      .reveal.active {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .nav-scrolled {
+        background-color: rgba(17, 24, 39, 0.8);
+        backdrop-filter: blur(10px);
+      }
+      .skill-card {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+      .skill-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 25px -5px rgba(217, 70, 239, 0.2),
+          0 10px 10px -5px rgba(217, 70, 239, 0.1);
+      }
+    </style>
+  </head>
+  <body class="bg-gray-900 text-white font-sans">
+    <nav
+      id="navbar"
+      class="fixed w-full top-0 z-50 p-4 transition-all duration-300 nav-scrolled"
+    >
+      <div class="container mx-auto flex justify-between items-center">
+        <a href="index.html" class="text-3xl font-bold"
+          >Muhsina <span class="text-fuchsia-500">Juhi</span></a
+        >
+        <div class="hidden md:flex items-center space-x-6 text-lg">
+          <a href="index.html#home" class="hover:text-fuchsia-400 transition"
+            >Home</a
+          >
+          <a href="index.html#about" class="hover:text-fuchsia-400 transition"
+            >About</a
+          >
+          <a
+            href="index.html#projects"
+            class="hover:text-fuchsia-400 transition"
+            >Projects</a
+          >
+          <a href="skills.html" class="text-fuchsia-400 font-bold transition"
+            >Professional Skills</a
+          >
+          <a
+            href="index.html#contact"
+            class="bg-fuchsia-600 px-5 py-2 rounded-full hover:bg-fuchsia-700 transition"
+            >Contact Me</a
+          >
+        </div>
+        <button id="menu-btn" class="md:hidden text-3xl z-50">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+      <div
+        id="mobile-menu"
+        class="hidden md:hidden absolute top-0 right-0 w-full h-screen bg-gray-900 flex flex-col items-center justify-center space-y-8 text-2xl"
+      >
+        <a href="index.html#home" class="mobile-link">Home</a>
+        <a href="index.html#about" class="mobile-link">About</a>
+        <a href="index.html#projects" class="mobile-link">Projects</a>
+        <a href="skills.html" class="mobile-link text-fuchsia-400"
+          >Professional Skills</a
+        >
+        <a href="index.html#contact" class="mobile-link">Contact</a>
+      </div>
+    </nav>
+
+    <section class="py-32 animated-gradient">
+      <div class="container mx-auto px-6">
+        <div class="text-center mb-16">
+          <h1 class="text-5xl md:text-6xl font-bold reveal">
+            Professional Expertise
+          </h1>
+          <p class="text-xl text-gray-300 mt-4 max-w-3xl mx-auto reveal">
+            Specializing in lead generation, client outreach, and website
+            analysis to drive business growth and ensure digital excellence.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+          <div
+            class="skill-card bg-gray-800/50 p-8 rounded-2xl border border-fuchsia-500/20 reveal"
+          >
+            <div class="text-4xl text-fuchsia-400 mb-4">
+              <i class="fa-solid fa-users-line"></i>
+            </div>
+            <h3 class="text-2xl font-bold mb-3">Lead Generation</h3>
+            <p class="text-gray-300 leading-relaxed">
+              I identify and qualify potential clients for businesses by using
+              advanced search techniques and tools, ensuring a steady pipeline
+              of valuable leads.
+            </p>
+          </div>
+
+          <div
+            class="skill-card bg-gray-800/50 p-8 rounded-2xl border border-fuchsia-500/20 reveal"
+          >
+            <div class="text-4xl text-fuchsia-400 mb-4">
+              <i class="fa-solid fa-paper-plane"></i>
+            </div>
+            <h3 class="text-2xl font-bold mb-3">Client Outreach</h3>
+            <p class="text-gray-300 leading-relaxed">
+              I craft personalized and effective communication strategies to
+              engage potential clients, build strong relationships, and convert
+              leads into loyal customers.
+            </p>
+          </div>
+
+          <div
+            class="skill-card bg-gray-800/50 p-8 rounded-2xl border border-fuchsia-500/20 reveal"
+          >
+            <div class="text-4xl text-fuchsia-400 mb-4">
+              <i class="fa-solid fa-magnifying-glass-chart"></i>
+            </div>
+            <h3 class="text-2xl font-bold mb-3">SEO & Website Analysis</h3>
+            <p class="text-gray-300 leading-relaxed">
+              I conduct comprehensive website audits using various SEO tools to
+              analyze performance, identify issues, and provide actionable
+              recommendations for improvement.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="bg-gray-900 py-8 text-center text-gray-400">
+      <div class="container mx-auto">
+        <p>&copy; 2025 Muhsina Juhi. All Rights Reserved.</p>
+        <div class="mt-4 text-2xl">
+          <a
+            href="https://github.com/Zuhi732"
+            target="_blank"
+            class="mx-2 hover:text-fuchsia-400"
+            ><i class="fa-brands fa-github"></i
+          ></a>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const menuBtn = document.getElementById("menu-btn");
+        const mobileMenu = document.getElementById("mobile-menu");
+        const mobileLinks = document.querySelectorAll(".mobile-link");
+
+        // Mobile menu toggle
+        menuBtn.addEventListener("click", () => {
+          const isHidden = mobileMenu.classList.contains("hidden");
+          mobileMenu.classList.toggle("hidden");
+          menuBtn.innerHTML = isHidden
+            ? '<i class="fa-solid fa-times"></i>'
+            : '<i class="fa-solid fa-bars"></i>';
+        });
+
+        // Close mobile menu on link click
+        mobileLinks.forEach((link) => {
+          link.addEventListener("click", () => {
+            mobileMenu.classList.add("hidden");
+            menuBtn.innerHTML = '<i class="fa-solid fa-bars"></i>';
+          });
+        });
+
+        // Intersection Observer for reveal animations
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("active");
+              }
+            });
+          },
+          { threshold: 0.1 }
+        );
+
+        document.querySelectorAll(".reveal").forEach((el) => {
+          observer.observe(el);
+        });
+      });
+    </script>
+  </body>
+</html>
