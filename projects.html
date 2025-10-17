@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Projects | Muhsina Juhi</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <style>
+      /* --- Custom CSS for Advanced Animations --- */
+      @keyframes gradient-animation {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+      .animated-gradient {
+        background: linear-gradient(-45deg, #1a1a2e, #16213e, #0f3460, #533483);
+        background-size: 400% 400%;
+        animation: gradient-animation 15s ease infinite;
+      }
+      .reveal {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+      }
+      .reveal.active {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .nav-scrolled {
+        background-color: rgba(17, 24, 39, 0.8);
+        backdrop-filter: blur(10px);
+      }
+      .project-card .overlay {
+        opacity: 0;
+        transition: opacity 0.4s ease-in-out;
+      }
+      .project-card:hover .overlay {
+        opacity: 1;
+      }
+      .project-card img {
+        transition: transform 0.4s ease-in-out;
+      }
+      .project-card:hover img {
+        transform: scale(1.05);
+      }
+    </style>
+  </head>
+  <body class="bg-gray-900 text-white font-sans">
+    <nav
+      id="navbar"
+      class="fixed w-full top-0 z-50 p-4 transition-all duration-300 nav-scrolled"
+    >
+      <div class="container mx-auto flex justify-between items-center">
+        <a href="index.html" class="text-3xl font-bold">
+          Muhsina <span class="text-fuchsia-500">Juhi</span>
+        </a>
+        <div class="hidden md:flex items-center space-x-6 text-lg">
+          <a href="index.html" class="hover:text-fuchsia-400 transition"
+            >Home</a
+          >
+          <a href="index.html#about" class="hover:text-fuchsia-400 transition"
+            >About</a
+          >
+          <a href="projects.html" class="text-fuchsia-400 font-bold transition"
+            >Projects</a
+          >
+          <a href="skills.html" class="hover:text-fuchsia-400 transition"
+            >Professional Skills</a
+          >
+          <a
+            href="index.html#contact"
+            class="bg-fuchsia-600 px-5 py-2 rounded-full hover:bg-fuchsia-700 transition"
+            >Contact Me</a
+          >
+        </div>
+        <button id="menu-btn" class="md:hidden text-3xl z-50">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+      <div
+        id="mobile-menu"
+        class="hidden md:hidden absolute top-0 right-0 w-full h-screen bg-gray-900 flex flex-col items-center justify-center space-y-8 text-2xl"
+      >
+        <a href="index.html" class="mobile-link">Home</a>
+        <a href="index.html#about" class="mobile-link">About</a>
+        <a href="projects.html" class="mobile-link text-fuchsia-400"
+          >Projects</a
+        >
+        <a href="skills.html" class="mobile-link">Professional Skills</a>
+        <a href="index.html#contact" class="mobile-link">Contact</a>
+      </div>
+    </nav>
+
+    <section id="projects" class="py-32 bg-gray-800">
+      <div class="container mx-auto px-6">
+        <h2 class="text-5xl font-bold mb-16 text-center reveal">
+          My <span class="text-fuchsia-500">Projects</span>
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+          <div
+            class="project-card relative overflow-hidden rounded-lg shadow-2xl reveal"
+          >
+            <img
+              src="image/Screenshot (612).png"
+              alt="A2-Kids-School"
+              class="w-full h-full object-cover"
+            />
+            <div
+              class="overlay absolute inset-0 bg-black bg-opacity-70 flex flex-col justify-center items-center p-4 text-center"
+            >
+              <h3 class="text-2xl font-bold mb-2">A2-Kids-School</h3>
+              <a
+                href="https://zuhi732.github.io/A2-KIDS-SCHOOL/"
+                target="_blank"
+                class="mt-4 bg-fuchsia-600 text-white px-5 py-2 rounded-full font-semibold hover:bg-fuchsia-700 transition"
+                >View Project</a
+              >
+            </div>
+          </div>
+          <div
+            class="project-card relative overflow-hidden rounded-lg shadow-2xl reveal"
+          >
+            <img
+              src="image/Screenshot (615).png"
+              alt="Browse4Pets"
+              class="w-full h-full object-cover"
+            />
+            <div
+              class="overlay absolute inset-0 bg-black bg-opacity-70 flex flex-col justify-center items-center p-4 text-center"
+            >
+              <h3 class="text-2xl font-bold mb-2">Browse4Pets</h3>
+              <a
+                href="https://zuhi732.github.io/B11-A3-Lab/"
+                target="_blank"
+                class="mt-4 bg-fuchsia-600 text-white px-5 py-2 rounded-full font-semibold hover:bg-fuchsia-700 transition"
+                >View Project</a
+              >
+            </div>
+          </div>
+          <div
+            class="project-card relative overflow-hidden rounded-lg shadow-2xl reveal"
+          >
+            <img
+              src="image/Screenshot (611).png"
+              alt="G3-Architect"
+              class="w-full h-full object-cover"
+            />
+            <div
+              class="overlay absolute inset-0 bg-black bg-opacity-70 flex flex-col justify-center items-center p-4 text-center"
+            >
+              <h3 class="text-2xl font-bold mb-2">G3-Architect</h3>
+              <a
+                href="https://zuhi732.github.io/g3-architect-website/"
+                target="_blank"
+                class="mt-4 bg-fuchsia-600 text-white px-5 py-2 rounded-full font-semibold hover:bg-fuchsia-700 transition"
+                >View Project</a
+              >
+            </div>
+          </div>
+          <div
+            class="project-card relative overflow-hidden rounded-lg shadow-2xl reveal"
+          >
+            <img
+              src="image/Screenshot (1423).png"
+              alt="MEAL-MENU"
+              class="w-full h-full object-cover"
+            />
+            <div
+              class="overlay absolute inset-0 bg-black bg-opacity-70 flex flex-col justify-center items-center p-4 text-center"
+            >
+              <h3 class="text-2xl font-bold mb-2">MEAL-MENU</h3>
+              <a
+                href="https://zuhi732.github.io/MEAL-MANU/"
+                target="_blank"
+                class="mt-4 bg-fuchsia-600 text-white px-5 py-2 rounded-full font-semibold hover:bg-fuchsia-700 transition"
+                >View Project</a
+              >
+            </div>
+          </div>
+          <div
+            class="project-card relative overflow-hidden rounded-lg shadow-2xl reveal"
+          >
+            <img
+              src="image/Screenshot (609).png"
+              alt="Dev-Board"
+              class="w-full h-full object-cover"
+            />
+            <div
+              class="overlay absolute inset-0 bg-black bg-opacity-70 flex flex-col justify-center items-center p-4 text-center"
+            >
+              <h3 class="text-2xl font-bold mb-2">Dev-Board</h3>
+              <a
+                href="https://zuhi732.github.io/A5-dev-board-j/"
+                target="_blank"
+                class="mt-4 bg-fuchsia-600 text-white px-5 py-2 rounded-full font-semibold hover:bg-fuchsia-700 transition"
+                >View Project</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="bg-gray-900 py-8 text-center text-gray-400">
+      <div class="container mx-auto">
+        <p>&copy; 2025 Muhsina Juhi. All Rights Reserved.</p>
+        <div class="mt-4 text-2xl">
+          <a
+            href="https://github.com/Zuhi732"
+            target="_blank"
+            class="mx-2 hover:text-fuchsia-400"
+            ><i class="fa-brands fa-github"></i
+          ></a>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const navbar = document.getElementById("navbar");
+        const menuBtn = document.getElementById("menu-btn");
+        const mobileMenu = document.getElementById("mobile-menu");
+        const mobileLinks = document.querySelectorAll(".mobile-link");
+
+        menuBtn.addEventListener("click", () => {
+          const isHidden = mobileMenu.classList.contains("hidden");
+          mobileMenu.classList.toggle("hidden");
+          menuBtn.innerHTML = isHidden
+            ? '<i class="fa-solid fa-times"></i>'
+            : '<i class="fa-solid fa-bars"></i>';
+        });
+
+        mobileLinks.forEach((link) => {
+          link.addEventListener("click", () => {
+            mobileMenu.classList.add("hidden");
+            menuBtn.innerHTML = '<i class="fa-solid fa-bars"></i>';
+          });
+        });
+
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("active");
+              }
+            });
+          },
+          { threshold: 0.1 }
+        );
+
+        document.querySelectorAll(".reveal").forEach((el) => {
+          observer.observe(el);
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -67,7 +67,7 @@
         <div class="hidden md:flex items-center space-x-6 text-lg">
           <a href="#home" class="hover:text-fuchsia-400 transition">Home</a>
           <a href="#about" class="hover:text-fuchsia-400 transition">About</a>
-          <a href="#projects" class="hover:text-fuchsia-400 transition"
+          <a href="projects.html" class="hover:text-fuchsia-400 transition"
             >Projects</a
           >
           <a href="skills.html" class="hover:text-fuchsia-400 transition"
@@ -89,7 +89,7 @@
       >
         <a href="#home" class="mobile-link">Home</a>
         <a href="#about" class="mobile-link">About</a>
-        <a href="#projects" class="mobile-link">Projects</a>
+        <a href="projects.html" class="mobile-link">Projects</a>
         <a href="skills.html" class="mobile-link">Professional Skills</a>
         <a href="#contact" class="mobile-link">Contact</a>
       </div>
@@ -162,12 +162,12 @@
       </div>
     </section>
 
-    <section id="projects" class="py-24 bg-gray-800">
-      <div class="container mx-auto px-6">
-        <h2 class="text-5xl font-bold mb-12 text-center reveal">
-          My <span class="text-fuchsia-500">Projects</span>
+    <section id="featured-projects" class="py-24 bg-gray-800">
+      <div class="container mx-auto px-6 text-center">
+        <h2 class="text-5xl font-bold mb-12 reveal">
+          Featured <span class="text-fuchsia-500">Projects</span>
         </h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-10">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
           <div
             class="project-card relative overflow-hidden rounded-lg shadow-2xl reveal"
           >
@@ -181,7 +181,7 @@
             >
               <h3 class="text-2xl font-bold mb-2">A2-Kids-School</h3>
               <a
-                href="https://zuhi732.github.io/g3-architect-website/"
+                href="https://zuhi732.github.io/A2-KIDS-SCHOOL/"
                 target="_blank"
                 class="mt-4 bg-fuchsia-600 text-white px-5 py-2 rounded-full font-semibold hover:bg-fuchsia-700 transition"
                 >View Project</a
@@ -208,46 +208,14 @@
               >
             </div>
           </div>
-          <div
-            class="project-card relative overflow-hidden rounded-lg shadow-2xl reveal"
+        </div>
+        <div class="mt-12 reveal">
+          <a
+            href="projects.html"
+            class="bg-gray-700 text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-gray-600 transition duration-300 inline-block"
           >
-            <img
-              src="image/Screenshot (611).png"
-              alt="G3-Architect"
-              class="w-full h-full object-cover"
-            />
-            <div
-              class="overlay absolute inset-0 bg-black bg-opacity-70 flex flex-col justify-center items-center p-4 text-center"
-            >
-              <h3 class="text-2xl font-bold mb-2">G3-Architect</h3>
-              <a
-                href="https://zuhi732.github.io/B11-A3-Lab/"
-                target="_blank"
-                class="mt-4 bg-fuchsia-600 text-white px-5 py-2 rounded-full font-semibold hover:bg-fuchsia-700 transition"
-                >View Project</a
-              >
-            </div>
-          </div>
-          <div
-            class="project-card relative overflow-hidden rounded-lg shadow-2xl reveal"
-          >
-            <img
-              src="image/Screenshot (609).png"
-              alt="Dev-Board"
-              class="w-full h-full object-cover"
-            />
-            <div
-              class="overlay absolute inset-0 bg-black bg-opacity-70 flex flex-col justify-center items-center p-4 text-center"
-            >
-              <h3 class="text-2xl font-bold mb-2">Dev-Board</h3>
-              <a
-                href="https://zuhi732.github.io/B11-A3-Lab/"
-                target="_blank"
-                class="mt-4 bg-fuchsia-600 text-white px-5 py-2 rounded-full font-semibold hover:bg-fuchsia-700 transition"
-                >View Project</a
-              >
-            </div>
-          </div>
+            View All Projects <i class="fa-solid fa-arrow-right ml-2"></i>
+          </a>
         </div>
       </div>
     </section>
@@ -257,7 +225,6 @@
         <h2 class="text-5xl font-bold mb-12 text-center reveal">
           Contact <span class="text-fuchsia-500">Me</span>
         </h2>
-
         <form
           action="https://formspree.io/f/xpwykedr"
           method="POST"
@@ -270,7 +237,6 @@
             required
             class="w-full p-4 rounded-lg bg-gray-800/50 text-white placeholder-gray-400 border border-transparent focus:ring-2 focus:ring-fuchsia-500 focus:outline-none"
           />
-
           <input
             type="email"
             name="email"
@@ -278,7 +244,6 @@
             required
             class="w-full p-4 rounded-lg bg-gray-800/50 text-white placeholder-gray-400 border border-transparent focus:ring-2 focus:ring-fuchsia-500 focus:outline-none"
           />
-
           <textarea
             name="message"
             rows="5"
@@ -286,7 +251,6 @@
             required
             class="w-full p-4 rounded-lg bg-gray-800/50 text-white placeholder-gray-400 border border-transparent focus:ring-2 focus:ring-fuchsia-500 focus:outline-none"
           ></textarea>
-
           <button
             type="submit"
             class="w-full bg-fuchsia-600 text-white py-4 rounded-lg text-lg font-semibold hover:bg-fuchsia-700 transition"
@@ -318,7 +282,6 @@
         const mobileMenu = document.getElementById("mobile-menu");
         const mobileLinks = document.querySelectorAll(".mobile-link");
 
-        // Navbar scroll effect
         window.addEventListener("scroll", () => {
           if (window.scrollY > 50) {
             navbar.classList.add("nav-scrolled");
@@ -327,7 +290,6 @@
           }
         });
 
-        // Mobile menu toggle
         menuBtn.addEventListener("click", () => {
           const isHidden = mobileMenu.classList.contains("hidden");
           mobileMenu.classList.toggle("hidden");
@@ -336,7 +298,6 @@
             : '<i class="fa-solid fa-bars"></i>';
         });
 
-        // Close mobile menu on link click
         mobileLinks.forEach((link) => {
           link.addEventListener("click", () => {
             mobileMenu.classList.add("hidden");
@@ -344,7 +305,6 @@
           });
         });
 
-        // Intersection Observer for reveal animations
         const observer = new IntersectionObserver(
           (entries) => {
             entries.forEach((entry) => {
@@ -360,7 +320,6 @@
           observer.observe(el);
         });
 
-        // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
           anchor.addEventListener("click", function (e) {
             e.preventDefault();
@@ -368,18 +327,6 @@
               behavior: "smooth",
             });
           });
-        });
-
-        // Contact Form
-        const contactForm = document.getElementById("contactForm");
-        const successMessage = document.getElementById("successMessage");
-        contactForm.addEventListener("submit", function (event) {
-          event.preventDefault();
-          successMessage.classList.remove("hidden");
-          contactForm.reset();
-          setTimeout(() => {
-            successMessage.classList.add("hidden");
-          }, 4000);
         });
       });
     </script>
