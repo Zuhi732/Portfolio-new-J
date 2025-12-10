@@ -48,37 +48,6 @@
         opacity: 0;
         transition: opacity 0.4s ease-in-out;
       }
-      .project-card:hover .overlay {
-        opacity: 1;
-      }
-      .project-card img {
-        transition: transform 0.4s ease-in-out;
-      }
-      .project-card:hover img {
-        transform: scale(1.05);
-      }
-      .skill-card {
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-      }
-      .skill-card:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 20px 25px -5px rgba(217, 70, 239, 0.2),
-          0 10px 10px -5px rgba(217, 70, 239, 0.1);
-      }
-      /* আপনার বর্তমান স্টাইলের এই অংশটি খুঁজুন */
-      .project-card:hover .overlay {
-        opacity: 1;
-      }
-      .project-card img {
-        transition: transform 0.4s ease-in-out;
-      }
-      .project-card:hover img {
-        transform: scale(1.05);
-      }
-
-      /* --- পরিবর্তন করে নিচের মতো করুন --- */
-
-      /* Hover এর পাশাপাশি '.active' ক্লাস থাকলেও ওভারলে দেখাবে */
       .project-card:hover .overlay,
       .project-card.active .overlay {
         opacity: 1;
@@ -86,10 +55,30 @@
       .project-card img {
         transition: transform 0.4s ease-in-out;
       }
-      /* Hover এর পাশাপাশি '.active' ক্লাস থাকলেও ছবি জুম হবে */
       .project-card:hover img,
       .project-card.active img {
         transform: scale(1.05);
+      }
+
+      /* ==================================== */
+      /* --- SUPER FOLD ANIMATION STYLES --- */
+      /* ==================================== */
+
+      /* এই CSS ক্লাসটি প্রজেক্ট সেকশনের জন্য একটি মসৃণ ফোল্ড ইফেক্ট তৈরি করবে */
+      .fold-out {
+        transform-origin: top left;
+        /* Perspective is key for the 3D fold effect */
+        perspective: 1500px;
+      }
+
+      /* সেকশনটি যখন 'fold-out' হবে তখন এই ক্লাসটি যুক্ত হবে */
+      .fold-out.active-fold {
+        /* Rotating on the Y-axis gives the 'door-like' fold */
+        transform: rotateY(-90deg) scale(0.8);
+        opacity: 0;
+        transition: transform 1.2s cubic-bezier(0.5, 0, 0.2, 1),
+          opacity 0.8s ease-out;
+        z-index: 10; /* Make sure it stays on top during the animation */
       }
     </style>
   </head>
@@ -202,7 +191,7 @@
       </div>
     </section>
 
-    <section id="featured-projects" class="py-24 bg-gray-800">
+    <section id="featured-projects" class="py-24 bg-gray-800 fold-out">
       <div class="container mx-auto px-6">
         <h2 class="text-4xl md:text-5xl font-bold mb-16 text-center reveal">
           Featured <span class="text-fuchsia-500">Projects</span>
@@ -254,12 +243,12 @@
         </div>
 
         <div class="mt-12 text-center reveal">
-          <a
-            href="projects.html"
+          <button
+            id="view-all-projects-btn"
             class="border border-fuchsia-500 text-fuchsia-400 px-8 py-3 rounded-full text-lg font-semibold hover:bg-fuchsia-600 hover:text-white transition duration-300 inline-flex items-center gap-2"
           >
             View All Projects <i class="fa-solid fa-arrow-right"></i>
-          </a>
+          </button>
         </div>
       </div>
     </section>
@@ -349,12 +338,9 @@
         });
 
         // --- Mobile Project Card Tap Effect (index.html ও projects.html এর জন্য) ---
-        // মোবাইলে কার্ডে ট্যাপ করলে 'active' ক্লাস টগল হবে, যা অ্যানিমেশন ট্রিগার করবে
         const projectCards = document.querySelectorAll(".project-card");
         projectCards.forEach((card) => {
           card.addEventListener("click", function () {
-            // এই লাইনটি আন-কমেন্ট করলে, একটিতে ট্যাপ করলে অন্যগুলো বন্ধ হয়ে যাবে
-            // projectCards.forEach(c => c.classList.remove('active'));
             this.classList.toggle("active");
           });
         });
@@ -373,6 +359,28 @@
 
         document.querySelectorAll(".reveal").forEach((el) => {
           observer.observe(el);
+        });
+
+        /* ===================================== */
+        /* --- SUPER FOLD ANIMATION SCRIPT --- */
+        /* ===================================== */
+
+        const projectSection = document.getElementById("featured-projects");
+        const viewAllBtn = document.getElementById("view-all-projects-btn");
+
+        viewAllBtn.addEventListener("click", function (e) {
+          // এটি একটি <button> তাই e.preventDefault() প্রয়োজন নেই, তবে নিরাপত্তার জন্য রাখা ভালো
+          e.preventDefault();
+
+          // 1. অ্যানিমেশন ক্লাস যোগ করুন
+          projectSection.classList.add("active-fold");
+
+          // 2. অ্যানিমেশন শেষ হওয়ার পর পেজ রিডাইরেক্ট করুন
+          const redirectTime = 1200; // CSS transition এর সময়ের চেয়ে সামান্য বেশি
+
+          setTimeout(() => {
+            window.location.href = "projects.html";
+          }, redirectTime);
         });
       });
     </script>
